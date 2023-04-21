@@ -5,22 +5,25 @@ import { AboutPageComponent } from './shared/pages/about-page/about-page.compone
 import { ContacPageComponent } from './shared/pages/contac-page/contac-page.component';
 
 const router: Routes = [
+  // {
+  //   path: '',
+  //   component: HomePageComponent
+  // },
+  // {
+  //   path: 'about',
+  //   component: AboutPageComponent
+  // },
+  // {
+  //   path: 'contac',
+  //   component: ContacPageComponent
+  // },
   {
-    path: '',
-    component: HomePageComponent
+    path: 'countries',
+    loadChildren: () => import('./countries/countries.module').then( m => m.CountriesModule)
   },
-  {
-    path: 'about',
-    component: AboutPageComponent
-  },
-  {
-    path: 'contac',
-    component: ContacPageComponent
-  },
-
   {
     path: '**',
-    redirectTo: ''
+    redirectTo: 'countries'
   }
 ]
 
