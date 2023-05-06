@@ -15,7 +15,10 @@ export class ByCountryPageComponent {
   constructor( private countryServices: CountriesService) {}
 
   searchByCoutry( term: string ) {
-
+     this.countryServices.searchContry( term )
+       .subscribe( country => {
+          this.countries = country
+       });
   }
 
 }
